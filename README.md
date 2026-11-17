@@ -1,6 +1,6 @@
 
-## Controle de Consultas Clinica Escola
-*projeto desenvolvido na disciplina de programação 2 com o intuito de integrar os conteúdos vistos ao longo do semestre com uma aplicação prática real, com uma instituição existente ou ficticia.*
+## Controle de Consultas Clinica Escola🩺🥼
+###### *projeto desenvolvido na disciplina de programação 2 com o intuito de integrar os conteúdos vistos ao longo do semestre com uma aplicação prática real, com uma instituição existente ou fictícia.*
 ----------
 #### CONTEXTO:
 A instituição escolhida foi a Universidade Estadual de Santa Catarina (UDESC), o campus CEFID. A Udesc oferta curso de graduação em fisioterapia, a qual sendo uma área da saúde, tem a necessidade da realização de residência clínica do estudantes. Dentro do campus, se encontra uma clinica escola, onde os alunos, bolsistas e docentes responsáveis atuam atendendo a comunidade em geral que precisa de algum tipo de reabilitação. Atualmente o registro de atendimentos é feito em alguns sistemas distintos, o que acaba causando confusões em atendimentos. 
