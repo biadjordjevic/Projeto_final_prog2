@@ -5,7 +5,7 @@
 // aqui vamos compara nomes sem diferenciar letras maiusculas e minisculas, além disso também compara os cpfs caso sejam iguais
 static int comparar(const char *n1, const char *c1, const char *n2, const char *c2){
  while(*n1 && *n2){
-    int a = tolower((unsigned char)*n1), b =tolower ((unisgner char)*n2);
+    int a = tolower((unsigned char)*n1), b =tolower ((unsigned char)*n2);
     if (a != b) return a - b;
     n1++; n2++;
  }   
@@ -18,7 +18,7 @@ noabb* abb_inserir(noabb *raiz, const char *nome, const char *cpf){
     if(!raiz){
         noabb *n = malloc(sizeof(noabb));
         if (!n) return NULL;
-        strcpy(n->nome, nome, sizeof(n->nome) - 1);
+        strncpy(n->nome, nome, sizeof(n->nome) - 1);
         n->nome[sizeof(n->nome) -1] = '\0';
         strncpy(n->cpf, cpf, sizeof(n->cpf) - 1);
         n->cpf[sizeof(n->cpf) - 1] = '\0';
@@ -39,8 +39,8 @@ noabb* abb_remover(noabb *raiz, const char *nome, const char *cpf){
     else{
         if(!raiz->esq || !raiz->dir ){
             noabb *filho = raiz->esq ? raiz->esq : raiz->dir;
-            free raiz;
-            return filho
+            free (raiz);
+            return filho;
         }
         noabb *suc = raiz->dir;
         while(suc->esq) suc = suc->esq;
@@ -52,7 +52,7 @@ noabb* abb_remover(noabb *raiz, const char *nome, const char *cpf){
     return raiz;
   
 }
-void abb_em_ordem(noabb *raiz, void (*visitar)(const char *, const char*)){
+void abb_ordenada(noabb *raiz, void (*visitar)(const char *, const char*)){
 if (!raiz) return;
 abb_ordenada(raiz->esq, visitar);
 visitar(raiz->nome, raiz->cpf);

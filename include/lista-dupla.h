@@ -3,7 +3,7 @@
 
 #include "modelos.h"
 
-typedef strcut NoLD {
+typedef struct NoLD {
     Consulta dados;
     struct NoLD *ant, *prox;
 } NoLD;
@@ -17,7 +17,7 @@ void ld_inicializar(ListaDupla *l);
 int ld_inserir_ordenado(ListaDupla *l, Consulta c);
 int ld_remover(ListaDupla *l, int id);
 NoLD* ld_buscar_id(ListaDupla *l, int id);
-NoLD* ld_primeiro(ListaDupla *l, long chave);
+NoLD* ld_primeiro(ListaDupla *l, long long chave);
 void ld_liberar(ListaDupla *l);
 
 #endif

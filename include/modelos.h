@@ -17,3 +17,14 @@ typedef struct {
     char observacoes[200];
     int em_espera;
 }Paciente;
+
+typedef struct{
+    int id;
+    char cpf[12];
+    char data_consulta[11];
+    char hora_consulta[6];
+    long long chave_data;
+    char observacoes[300];
+} Consulta;
+
+#endif

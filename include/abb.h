@@ -4,6 +4,7 @@
 typedef struct Noabb{
     char nome[100];
     char cpf[12];
+    struct Noabb *esq, *dir;
 }noabb;
 
 noabb* abb_inserir(noabb *raiz, const char *nome, const char *cpf);

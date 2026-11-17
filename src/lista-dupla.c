@@ -38,7 +38,7 @@ NoLD* ld_buscar_id(ListaDupla *l, int id){
 
 }
 
-int ld_remover(ListaDupla *l, long chave){
+int ld_remover(ListaDupla *l, int id){
     NoLD *p = ld_buscar_id(l, id);
     if (!p) return 0;
     if (p->ant) p->ant->prox = p->prox; else l->inicio = p->prox;
@@ -48,10 +48,10 @@ int ld_remover(ListaDupla *l, long chave){
     return 1;
 }
 
-NoLD* ld_primeiro_a_partir(ListaDupla *l, long chave){
+NoLD* ld_primeiro(ListaDupla *l, long long chave){
     NoLD *p = l ->inicio;
     while (p && p->dados.chave_data < chave) p =p->prox;
-    return p
+    return p;
 }
 
 void ld_liberar(ListaDupla *l){
