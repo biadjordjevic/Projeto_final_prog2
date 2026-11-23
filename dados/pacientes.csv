@@ -1,2 +1,6 @@
 cpf;nome;cep;endereco;bairro;idade;data_nasc;enfermidade;docente;area_estudo;observacoes
 10002333333;3333333333333333333333333333;111111111;11;1;1;1;0;0;0;-
+11111111111;111111111111;122334444;444444444;444444444444444444;2062812956;4444444444;44444444;4444444444444;44444444444444;44444444444444
+12345678910;Roberto;123456789;rua das flores;canas;39;23/07/1988;lesao na coxa;pedro camara;ortopedia;nenhuma
+14026359905;Beatriz;88054430;rua ranulpho jose de sousa sobrinho 256;canasvieiras;18;28/03/2008;bronquite;pedro camara;pneumo;nenhuma
+14126460006;Miguel;88054430;rua ranulpho jose de sousa sobrinho 256;canasvieiras;12;15/01/2014;joelho lesionado;pedro camara;ortopedia;nenhuma
