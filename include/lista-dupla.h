@@ -2,7 +2,7 @@
 #define LISTA_DUPLA_H
 
 #include "modelos.h"
-
+//puxa os dados de consulta de modelos.h e determina extremidade da lista
 typedef struct NoLD {
     Consulta dados;
     struct NoLD *ant, *prox;

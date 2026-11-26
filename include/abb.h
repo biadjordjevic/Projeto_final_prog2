@@ -13,3 +13,5 @@ void abb_ordenada(noabb *raiz, void (*visitar)(const char *nome, const char *cpf
 void abb_liberar(noabb *raiz);
 
 #endif
+
+//Ponto de atenção: se os nomes forem inseridos já em ordem alfebetica no sistema, vira uma lista encadeada 

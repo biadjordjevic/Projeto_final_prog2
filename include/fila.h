@@ -1,6 +1,6 @@
 #ifndef FILA_H
 #define FILA_H
-
+// determina oq que vai ter em cada nó da fila, e, como a fila vai se comportar
 typedef struct nofila {
     char cpf[12];
     char data_entrada[11];
@@ -21,3 +21,5 @@ void fila_liberar(fila *f);
 
 
 #endif
+
+// possui ligação com avl para obter o cpf, único dado do paciente que guarda 

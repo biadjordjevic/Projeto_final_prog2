@@ -12,3 +12,5 @@ int carregar_espera(const char *caminho, fila *f, noavl *pacientes);
 int salvar_consultas(const char *caminho, ListaDupla *l);
 int carregar_consultas(const char *caminho, ListaDupla *l, int *proximo_id);
 #endif
+
+//insere os dados nas planilhas  conforme o fluxo de cada estrutura solicita

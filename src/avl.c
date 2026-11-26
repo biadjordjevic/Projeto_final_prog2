@@ -5,7 +5,10 @@
 static int altura(noavl *n) {return n? n->altura : 0;}
 static int maior (int a, int b) {return a>b?a:b;}
 static void atualizar (noavl *n) {n->altura = 1 + maior(altura(n->esq), altura(n->dir));}
+// compara as subarvores com n para decidir o balanceamento desta
 static int fator (noavl *n) {return n ? altura(n->esq) - altura(n->dir):0;}
+//rotação: quando for decidido que está muito carregada na esquerda, os nós da subárvore serão reorganizados para que os dois
+//sentidos da árvore voltam a ficar parecidos, então o nó pesado pode subir, descer, conforme o sistema encontre necessidade;
 static noavl* rot_dir(noavl *y){
     noavl *x = y->esq;
     y->esq = x->dir;
@@ -23,7 +26,7 @@ static noavl* rot_esq(noavl *x){
     atualizar(y);
     return y;
 }
-
+//a função de balancear sera a responsável, basicamente, por chamar e encontrar a necessidade dessas rotações
 static noavl* balancear (noavl *n){
     atualizar(n);
     int f = fator(n);
@@ -37,6 +40,8 @@ static noavl* balancear (noavl *n){
     }
     return n;
 }
+
+//se não encontrar um espaço livre para inserir, cria um novo nó folha, depois faz as comparações para saber onde fica esse espaço livre
 noavl* avl_inserir(noavl *raiz, Paciente p, int *ok){
     if(!raiz){
         noavl *n =malloc(sizeof(noavl));
@@ -59,7 +64,7 @@ static noavl* menor_no(noavl *n){
     while(n->esq) n = n-> esq;
     return n;
 }
-
+// remoção simples ou dupla
 noavl* avl_remover(noavl *raiz, const char *cpf, int *ok){
     if(!raiz) {*ok = 0; return NULL;}
     int c=strcmp(cpf, raiz->dados.cpf);

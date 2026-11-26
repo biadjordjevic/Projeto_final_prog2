@@ -3,7 +3,7 @@
 #include <string.h>
 #include "persistencia.h"
 
-// Está parte do código é responsável por escrever os campos quebrando a linha e adicionando ponto e vírgula no final de cada um dos campo
+// Está parte do código é responsável por escrever os campos de maneira que sera aceita pelo csv
 static void escrever_campo(FILE  *f, const char *s){
     for (; *s; s++){
         char c = *s;

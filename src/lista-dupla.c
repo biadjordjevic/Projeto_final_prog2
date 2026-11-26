@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include "lista-dupla.h"
-
+//para ser percorrida do inicio ao fim, é mantida sempre em ordem cronológica
 void ld_inicializar(ListaDupla *l){
     l->inicio = l->fim = NULL;
     l->tamanho = 0;
 }
-
+//caso o nó a ser inserido seja maior vai ao fim, caso seja maior vai antes do maior e seus sucessores
 int ld_inserir_ordenado(ListaDupla *l, Consulta c){
     NoLD *novo = malloc(sizeof(NoLD));
     if(!novo) return 0;

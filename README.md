@@ -17,7 +17,7 @@ O sistema permite: cadastro, busca e remoção de pacientes; adicionar um nome n
 #### COMO RODAR O SISTEMA
 >cd Projeto_final_prog2
 >gcc src/*.c -Iinclude -Wall -o clinica.exe
- >.\clinica.exe   
+ >.\clinica.exe 
 
 #### ARQUITETURA E ORGANIZAÇÃO:
 .

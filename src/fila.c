@@ -11,7 +11,7 @@ nofila* fila_buscar(fila *f, const char *cpf){
     if(strcmp(p->cpf,cpf)==0)return p;
     return NULL;
 }
-
+//garante que o nó que vai entrar ocupara a última posição, que não ira apontar pra ninguém e o nó penultimo vai apontar para o novo
 int fila_enfileirar(fila *f, const char *cpf, const char *data_entrada){
     if(fila_buscar(f, cpf))return 0;
     nofila *n = malloc(sizeof(nofila));
@@ -26,6 +26,8 @@ int fila_enfileirar(fila *f, const char *cpf, const char *data_entrada){
     f->tamanho++;
     return 1;
 }
+
+//substitui o primeiro pelo segundo e devolve o cpf requisitado
 int fila_desenfileirar (fila *f, char *cpf_out){
     if (!f->inicio)return 0;
     nofila *n = f->inicio;
@@ -35,7 +37,7 @@ int fila_desenfileirar (fila *f, char *cpf_out){
     free(n);
     f->tamanho--;
     return 1;}
-
+//o fim e o inicio se alteram caso o no a ser removido esteja ali, caso esteja no meio passa a ocupar a proxima posição p
 int fila_remover_cpf(fila *f, const char *cpf){
     nofila *ant = NULL, *p = f->inicio;
     while(p && strcmp(p->cpf,cpf) !=0 ){ ant = p; p = p->prox;}

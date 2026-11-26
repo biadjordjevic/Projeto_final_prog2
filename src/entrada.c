@@ -23,14 +23,13 @@ void ler_texto(const char *prompt, char *dest, int max){
         printf("%s", prompt);
         if(scanf(fmt, dest) != 1){ dest[0] = '\0'; return; }
         int c = getchar();
-        if(c == '\n' || c == EOF) return;   // coube no limite
-        descartar_linha();                  // passou do limite: joga fora o resto
+        if(c == '\n' || c == EOF) return;   
+        descartar_linha();                 
         printf("Maximo de %d caracteres. Digite novamente.\n", max);
     }
 }
 
-// le digitos encaixando-os na mascara (ex.: "__/__/____").
-// devolve 1 se preencheu tudo, 0 se o usuario deixou vazio (so quando nao obrigatorio)
+
 static int ler_mascara(const char *prompt, const char *mascara, char *dest, int obrigatorio){
     int len = (int)strlen(mascara);
 #ifdef _WIN32
@@ -39,16 +38,15 @@ static int ler_mascara(const char *prompt, const char *mascara, char *dest, int 
         printf("%s", prompt); fflush(stdout);
         while(1){
             int c = _getch();
-            if(c == 0 || c == 0xE0){ _getch(); continue; }  // setas, F1... ignora
-            if(c == 3) exit(0);                                 // Ctrl+C
+            if(c == 0 || c == 0xE0){ _getch(); continue; }  
+            if(c == 3) exit(0);                                 
             if(c == '\r'){
                 if(n == len) break;
                 if(n == 0 && !obrigatorio) break;
-                continue;                                       // incompleto: espera mais digitos
-            }
+                continue;                                      
             if(c == '-' && n == 0 && !obrigatorio){ putchar('-'); break; }
             if(c == '\b'){
-                // apaga separadores automaticos e depois um digito
+
                 while(n > 0 && mascara[n-1] != '_'){ n--; printf("\b \b"); }
                 if(n > 0){ n--; printf("\b \b"); }
                 fflush(stdout);
@@ -56,7 +54,7 @@ static int ler_mascara(const char *prompt, const char *mascara, char *dest, int 
             }
             if(c >= '0' && c <= '9' && n < len){
                 dest[n++] = (char)c; putchar(c);
-                // coloca a barra / dois-pontos sozinho
+
                 while(n < len && mascara[n] != '_'){ dest[n] = mascara[n]; putchar(dest[n]); n++; }
                 fflush(stdout);
             }
@@ -66,8 +64,7 @@ static int ler_mascara(const char *prompt, const char *mascara, char *dest, int 
         return n > 0;
     }
 #endif
-    // entrada redirecionada (ou fora do Windows): le a linha e formata os digitos
-    int qtd_digitos = 0;
+  int qtd_digitos = 0;
     for(int i = 0; i < len; i++) if(mascara[i] == '_') qtd_digitos++;
     while(1){
         char linha[64], dig[16];
