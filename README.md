@@ -17,41 +17,41 @@ O sistema permite: cadastro, busca e remoção de pacientes; adicionar um nome n
 #### COMO RODAR O SISTEMA
 -----
 ###### Windows
->cd Projeto_final_prog2
->gcc src/*.c -Iinclude -Wall -o clinica.exe
- >.\clinica.exe 
+>cd Projeto_final_prog2 <br>
+>gcc src/*.c -Iinclude -Wall -o clinica.exe<br>
+ >.\clinica.exe <br>
 -----
 ###### Linux
->cd Projeto_final_prog2
->gcc src/*.c -Iinclude -Wall -o clinica
- >./clinica
+>cd Projeto_final_prog2<br>
+>gcc src/*.c -Iinclude -Wall -o clinica<br>
+ >./clinica<br>
 
 #### ARQUITETURA E ORGANIZAÇÃO:
-.
-├── dados/
-│   ├── consultas.csv        # consultas agendadas
-│   ├── lista-espera.csv     # fila de espera
-│   └── pacientes.csv        # cadastro de pacientes
-├── include/
-│   ├── abb.h                # árvore binária de busca (índice por nome)
-│   ├── avl.h                # árvore AVL (pacientes por CPF)
-│   ├── fila.h               # fila da lista de espera
-│   ├── lista-dupla.h        # lista duplamente encadeada de consultas
-│   ├── main.h
-│   ├── modelos.h            # structs Paciente e Consulta
-│   ├── persistencia.h       # leitura e gravação dos CSVs
-│   └── relatorios.h         # relatórios exibidos no menu
-├── src/
-│   ├── abb.c
-│   ├── avl.c
-│   ├── fila.c
-│   ├── lista-dupla.c
-│   ├── main.c               # menu e fluxo principal
-│   ├── persistencia.c
-│   └── relatorios.c
-├── clinica.exe
-├── image.png
-└── README.md
+.<br>
+├── dados/<br>
+│   ├── consultas.csv           # consultas agendadas<br>
+│   ├── lista-espera.csv        # fila de espera<br>
+│   └── pacientes.csv           # cadastro de pacientes<br>
+├── include/<br>
+│   ├── abb.h                   # árvore binária de busca (índice por nome)<br>
+│   ├── avl.h                   # árvore AVL (pacientes por CPF)<br>
+│   ├── fila.h                  # fila da lista de espera<br>
+│   ├── lista-dupla.h           # lista duplamente encadeada de consultas<br>
+│   ├── main.h<br>
+│   ├── modelos.h               # structs Paciente e Consulta<br>
+│   ├── persistencia.h          # leitura e gravação dos CSVs<br>
+│   └── relatorios.h            # relatórios exibidos no menu<br>
+├── src/<br>
+│   ├── abb.c<br>
+│   ├── avl.c<br>
+│   ├── fila.c<br>
+│   ├── lista-dupla.c<br>
+│   ├── main.c                # menu e fluxo principal<br>
+│   ├── persistencia.c<br>
+│   └── relatorios.c<br>
+├── clinica.exe<br>
+├── image.png<br>
+└── README.md<br>
 
 #### DIFICULDADES E DECLARAÇÃO DE USO DE IA:
 As principais dificuldades se voltam para o curto prazo de entrega e dificuldade de conciliar o horário da reunião com a clinica, o que atrasou uma semana do desenvolvimento do projeto, diminuindo o tempo ainda mais. Além desse desafio, é de se imaginar que algumas funcionalidades específicas (como fazer o meu para execução) tiveram que ser aprendidas por fora. Com isso, muitas vezes falta de material específico avaba levando ao uso da IA, que, neste projeto foi utilizada para auxílio no gerenciamento de tempo, tiração de dúvidas eventuais principalmente em dificuldades que teriam se prolongado mais que o esperado; e, por fim, foi utilizada IA para gerar elementos visuais deste Read.me 
